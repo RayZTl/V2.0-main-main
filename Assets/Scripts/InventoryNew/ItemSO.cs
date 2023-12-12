@@ -13,10 +13,10 @@ public class ItemSO : ScriptableObject
 
     public bool UseItem()
     {
-        if(statToChange == StatToChange.health) 
+        if (statToChange == StatToChange.health)
         {
             HealthPlayer health = GameObject.Find("player").GetComponent<HealthPlayer>();
-            if(health.currentHealth == health.maxhealth)
+            if (health.currentHealth == health.maxhealth)
             {
                 return false;
             }
@@ -46,6 +46,6 @@ public class ItemSO : ScriptableObject
         speed,
         strenght,
         agility
-        
+
     };
 }

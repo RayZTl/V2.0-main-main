@@ -5,8 +5,9 @@ using System;
 
 public class HealthPlayer : MonoBehaviour
 {
+   
     [Header("Health")]
-    [SerializeField]public int maxhealth;
+    [SerializeField] public int maxhealth;
     public int currentHealth;
 
     [Header("Health Sprite")]
@@ -18,7 +19,7 @@ public class HealthPlayer : MonoBehaviour
     //player dead
     [HideInInspector] public bool playerisDead;
 
-    public GameMaster gm; 
+    public GameMaster gm;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,12 @@ public class HealthPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             GameOver();
         }
 
-        if(currentHealth > maxhealth)
+        if (currentHealth > maxhealth)
         {
             currentHealth = maxhealth;
         }
@@ -42,9 +43,9 @@ public class HealthPlayer : MonoBehaviour
 
     private void OnGUI()
     {
-        for(int i = 0; i < HeartContainer.Length; i++)
+        for (int i = 0; i < HeartContainer.Length; i++)
         {
-            if(i < currentHealth)
+            if (i < currentHealth)
             {
                 HeartContainer[i].sprite = fullHealth;
             }
